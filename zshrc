@@ -1,8 +1,11 @@
+source $HOME/.command.zsh
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/muduo/.oh-my-zsh"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export ZSH="/data0/muduo//.oh-my-zsh"
+# bindkey -v
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +71,9 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+EDITOR=vim 
+export EDITOR
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,7 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
@@ -98,4 +102,11 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+alias gdb="gdb -q"
 alias cat=bat
+
+cd
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
